@@ -1,4 +1,4 @@
-interface OneInterface
+ interface BagInterface
 {
 
     void numberOfChains(int numberChains);

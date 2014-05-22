@@ -1,26 +1,46 @@
-public class One extends OneInerface
+class Bag implements  BagInterface
 {
     int chain, pocket;
-    Stirng brand_name;
+    String brand_name;
 
-    void numberOfChains(int value)
+    public void numberOfChains(int value)
     {
         chain = value;
     }
 
-    void numberOfPackets(int value)
+    public void numberOfPockets(int value)
     {
         pocket = value;
     }
 
-    void bagBrand(String name)
+   public  void bagBrand(String name)
     {
         brand_name = name;
     }
 
-    void BagDetails()
+    public void BagDetails()
     {
         System.out.print("Brand Name: "+brand_name+"  Number of chains: "+chain+"  Number of Packets: "+ pocket);
         System.out.println();
     }
+
+
+     public static void main(String [] args)
+    {
+        Bag bag1 = new Bag();
+        Bag bag2 = new Bag();
+
+        bag1.brand_name = "Case Werkz";
+        bag1.chain = 4;
+        bag1.pocket = 8;
+        bag1.BagDetails();
+
+        bag2.brand_name = "Puma";
+        bag2.chain = 4;
+        bag2.pocket = 5;
+        bag2.BagDetails();
+    }
+
+
+
 }

@@ -10,6 +10,10 @@ public class DataStructure {
             arrayOfInts[i] = i;
         }
     }
+    public DataStructureIterator getEvenIterator()
+    {
+        return new EvenIterator();
+    }
 
     public void printEven() {
 
@@ -20,6 +24,14 @@ public class DataStructure {
         }
         System.out.println();
     }
+        public void print( DataStructureIterator  iterator)
+        {
+            while(iterator.hasNext())
+                {
+                    System.out.print(iterator.next()+" ");
+                }
+        }
+
 
     interface DataStructureIterator extends java.util.Iterator<Integer> { }
 
@@ -53,6 +65,7 @@ public class DataStructure {
         // Fill the array with integer values and print out only
         // values of even indices
         DataStructure ds = new DataStructure();
-        ds.printEven();
+        //ds.printEven();
+        ds.print(ds.getEvenIterator());
     }
 }

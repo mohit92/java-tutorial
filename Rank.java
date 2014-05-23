@@ -1,0 +1,4 @@
+public enum Rank
+{
+    ACE, DEUCE , THREE, FOUR, FIVE, SIX, SEVEN,EIGHT,NINE,TEN,JACk,QUEEN,KING
+}

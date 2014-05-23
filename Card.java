@@ -1,16 +1,16 @@
 public class Card
 {
-    private final int rank;
-    private final int suit;
+    private final Rank rank;
+    private final Suit suit;
 
     // types of suits
-    public final static int DIAMONDS = 1;
+    /*public final static int DIAMONDS = 1;
     public final static int CLUBS = 2;
     public final static int HEARTS = 3;
-    public final static int SPADES = 4;
+    public final static int SPADES = 4; */
 
     //types of rank
-    public final static int ACE = 1;
+    /*    public final static int ACE = 1;
     public final static int DEUCE = 2;
     public final static int THREE =  3;
     public final static int FOUR = 4;
@@ -23,27 +23,33 @@ public class Card
     public final static int JACK = 11;
     public final static int QUEEN = 12;
     public final static int KING = 13;
+    */
 
-    public Card(int suit, int rank)
+    public Card(Suit suit, Rank rank)
     {
-        assert isValidSuit(suit);
-        assert isValidRank(rank);
+        //assert isValidSuit(suit);
+        //assert isValidRank(rank);
 
         this.suit = suit;
         this.rank = rank;
     }
 
-    public int getSuit()
+    public  Suit getSuit()
     {
         return suit;
     }
 
-    public int getRank()
+    public Rank  getRank()
     {
         return rank;
     }
 
-    public static boolean isValidSuit(int suit)
+    public String toString()
+    {
+        return (rank + " of " + suit);
+    }
+
+    /*public static boolean isValidSuit(int suit)
     {
         return suit<=SPADES && suit >=DIAMONDS;
     }
@@ -104,10 +110,10 @@ public class Card
 
         }
     }
-
+    */
     public static void main(String args[])
     {
-        assert rankToString(ACE) == "Ace";
-        assert suitToString(HEARTS) == "Hearts";
+        //assert rankToString(ACE) == "Ace";
+        // assert suitToString(HEARTS) == "Hearts";
     }
 }

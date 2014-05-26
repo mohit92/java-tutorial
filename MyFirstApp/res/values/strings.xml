@@ -3,4 +3,6 @@
     <string name="app_name">MyFirstApp</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="title_activity_display_message">My Message</string>
+
 </resources>

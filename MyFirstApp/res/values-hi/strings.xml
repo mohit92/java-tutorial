@@ -29,4 +29,11 @@
     <string name="abc_activity_chooser_view_see_all" msgid="7468859129482906941">"सभी देखें"</string>
     <string name="abc_shareactionprovider_share_with_application" msgid="7165123711973476752">"%s के साथ साझा करें"</string>
     <string name="abc_shareactionprovider_share_with" msgid="3421042268587513524">"इसके द्वारा साझा करें"</string>
+    <string name="app_name">मेरी पहली एप</string>
+    <string name="edit_message">एक संदेश दर्ज करें</string>
+    <string name="button_send">भेजें</string>
+    <string name="title_activity_display_message">मेरा संदेश</string>
+    <string name="action_search">खोजें</string>
+    <string name="action_settings">सेटिंग्स</string>
+    <string name="view_message">संदेश को देख</string>
 </resources>

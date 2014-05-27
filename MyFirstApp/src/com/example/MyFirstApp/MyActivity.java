@@ -1,12 +1,15 @@
 package com.example.MyFirstApp;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.*;
 import android.content.Intent;
 import android.widget.EditText;
+import android.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 
 public class MyActivity extends Activity {
@@ -31,8 +34,10 @@ public class MyActivity extends Activity {
     {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions,menu);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#330000ff")));
         return super.onCreateOptionsMenu(menu);
     }
+
 
 
 }

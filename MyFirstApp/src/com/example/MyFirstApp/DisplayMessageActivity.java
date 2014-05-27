@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.support.v7.app.*;
 import android.view.*;
 import android.app.*;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.graphics.drawable.*;
+import android.graphics.Color;
 
 public class DisplayMessageActivity extends  Activity{
     @Override
@@ -21,12 +24,21 @@ public class DisplayMessageActivity extends  Activity{
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
 
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
+        setContentView(R.layout.display_message_activity);
+        TextView textView = (TextView) findViewById(R.id.view_message);
+        //textView.setTextSize(40);
         textView.setText(message);
 
 
-        setContentView(textView);
+        //LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT) ;
+        //llp.setMargins(0,Integer.parseInt("?attr/actionBarSize"),0,0);
+
+
+        //textView.setLayoutParams(llp);
+
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#330000ff")));
     }
 
     @Override

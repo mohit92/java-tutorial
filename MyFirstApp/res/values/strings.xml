@@ -6,5 +6,6 @@
     <string name="title_activity_display_message">My Message</string>
     <string name="action_search">Action Search</string>
     <string name="action_settings">Action Settings</string>
+    <string name="view_message">View the Message</string>
 
 </resources>

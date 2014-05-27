@@ -26,6 +26,22 @@
          "Theme.Base" theme. -->
 
     <!-- Platform-independent theme providing an action bar in a dark-themed activity. -->
+    <style name="CustomActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/myActionBar</item>
+        <item name="android:actionBarTabStyle">@style/myActionBarTabText</item>
+
+    </style>
+
+    <style name="myActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@drawable/abc_cab_background_bottom_holo_dark</item>
+    </style>
+
+    <style name="myActionBarTabText" parent="Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/abc_search_url_text_holo</item>
+
+    </style>
+
+
     <style name="Theme.AppCompat" parent="Theme.Base.AppCompat">
         <item name="isLightTheme">false</item>
 
@@ -79,6 +95,7 @@
     <!-- Platform-independent theme providing an action bar in a light-themed activity. -->
     <style name="Theme.AppCompat.Light" parent="Theme.Base.AppCompat.Light">
         <item name="isLightTheme">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
 
         <!-- Required for use of support_simple_spinner_dropdown_item.xml -->
         <item name="spinnerDropDownItemStyle">
@@ -131,6 +148,8 @@
     <!-- Platform-independent theme providing an action bar in a dark-themed activity. -->
     <style name="Theme.AppCompat.Light.DarkActionBar"
            parent="Theme.Base.AppCompat.Light.DarkActionBar">
+
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="isLightTheme">true</item>
 
         <!-- Required for use of support_simple_spinner_dropdown_item.xml -->

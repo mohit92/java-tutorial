@@ -3,4 +3,5 @@
     <item name="action_settings" type="id">action</item>
     <item name="action_bar_activity_content" type="id">Action bar activity content</item>
     <item name="home" type="id">Home</item>
+    <item name="view_message" type="id">View Message</item>
 </resources>

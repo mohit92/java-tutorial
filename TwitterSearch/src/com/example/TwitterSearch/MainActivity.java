@@ -4,6 +4,8 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
+import java.sql.Connection;
 import java.util.List;
 
 
@@ -58,20 +61,32 @@ public class MainActivity extends Activity {
 
     public void processQuery(View view)
     {
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(queryEditText.getWindowToken(), 0);
-        String query = queryEditText.getText().toString();
-        if(query!=null && !query.isEmpty()) {
-            new processQueryAsyncTask().execute(view);
+        if(isNetworkAvailable()) {
+
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(queryEditText.getWindowToken(), 0);
+            String query = queryEditText.getText().toString();
+            if (query != null && !query.isEmpty()) {
+                new processQueryAsyncTask().execute(view);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Query could not be empty", Toast.LENGTH_LONG).show();
+                imm.showSoftInput(queryEditText, 0);
+                //String resultString ="Query can not be empty";
+                //return resultString;
+            }
         }
-        else
-        {
-            Toast.makeText(getApplicationContext(), "Query could not be empty", Toast.LENGTH_LONG).show();
-            imm.showSoftInput(queryEditText, 0);
-            //String resultString ="Query can not be empty";
-            //return resultString;
+        else{
+            Toast.makeText(getApplicationContext(),"No internet conection",Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private boolean isNetworkAvailable()
+    {
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo!=null && networkInfo.isConnected();
     }
 
 
